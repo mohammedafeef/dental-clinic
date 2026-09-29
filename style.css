@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #334155;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0B1320;
+  color: #94A3B8;
+}
+
+::selection {
+  background-color: #0073B2;
+  color: white;
+}
+
+/* ===== Dental Accent Dividers (drshameernm.com style) ===== */
+.heading-divider {
+  width: 50px;
+  height: 3px;
+  background-color: #0073B2;
+  border-radius: 9999px;
+  margin: 14px auto 24px auto;
+}
+
+.heading-divider-left {
+  width: 50px;
+  height: 3px;
+  background-color: #0073B2;
+  border-radius: 9999px;
+  margin: 14px 0 24px 0;
+}
+
+html.dark .heading-divider,
+html.dark .heading-divider-left {
+  background-color: #38BDF8;
+}
+
+/* ===== Animations ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hero-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-100 { transition-delay: 0.1s; }
+.animate-delay-200 { transition-delay: 0.2s; }
+.animate-delay-300 { transition-delay: 0.3s; }
+.animate-delay-400 { transition-delay: 0.4s; }
+.animate-delay-500 { transition-delay: 0.5s; }
+
+/* ===== Glassmorphism & Cards ===== */
+.glass-white {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+html.dark .glass-white {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(51, 65, 85, 0.8);
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #0073B2 0%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.dark .gradient-text {
+  background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Service Card (Clean Dental Clinic Style) ===== */
+.service-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+}
+
+html.dark .service-card {
+  background-color: #111C2E;
+  border-color: #1E293B;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #0073B2;
+  box-shadow: 0 20px 35px -8px rgba(0, 115, 178, 0.1);
+}
+
+html.dark .service-card:hover {
+  border-color: #0284C7;
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.5);
+}
+
+.service-card .service-icon {
+  transition: all 0.35s ease;
+}
+
+.service-card:hover .service-icon {
+  background-color: #0073B2;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+html.dark .service-card:hover .service-icon {
+  background-color: #0284C7;
+  color: #FFFFFF;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0B1320;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0073B2;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #0284C7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00598A;
+}
+
+/* ===== Header (Clean Light / Dark Mode) ===== */
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #E2E8F0;
+}
+
+html.dark .header-scrolled {
+  background: rgba(11, 19, 32, 0.98) !important;
+  border-bottom-color: #1E293B;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.header-scrolled .nav-link {
+  color: #334155;
+}
+
+html.dark .header-scrolled .nav-link {
+  color: #CBD5E1;
+}
+
+.header-scrolled .nav-link:hover,
+.header-scrolled .nav-link.\!text-primary {
+  color: #0073B2 !important;
+  background: #EAF4FA !important;
+}
+
+html.dark .header-scrolled .nav-link:hover,
+html.dark .header-scrolled .nav-link.\!text-primary {
+  color: #38BDF8 !important;
+  background: rgba(56, 189, 248, 0.1) !important;
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* ===== FAQ Accordion ===== */
+.faq-item {
+  transition: all 0.25s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 350px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* ===== Testimonial Cards ===== */
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: #0073B2;
+  box-shadow: 0 16px 32px -8px rgba(0, 115, 178, 0.08);
+}
+
+html.dark .testimonial-card:hover {
+  border-color: #0284C7;
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Theme Toggle Icons Pure CSS ===== */
+.theme-icon-sun {
+  display: none;
+}
+.theme-icon-moon {
+  display: block;
+}
+
+html.dark .theme-icon-sun {
+  display: block !important;
+}
+html.dark .theme-icon-moon {
+  display: none !important;
+}
+
