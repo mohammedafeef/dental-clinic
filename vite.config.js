@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/dental-clinic/',
+  base: '/',
   css: {
     postcss: './postcss.config.js',
   },
